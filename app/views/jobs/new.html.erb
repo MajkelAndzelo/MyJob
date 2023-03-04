@@ -1,0 +1,41 @@
+<h1>New Job Listing</h1>
+
+<%= form_with model: @job, url: jobs_path do |form| %>
+  <div class="mb-3">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: "form-control", placeholder: "Job Title" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :company %>
+    <%= form.text_field :company, class: "form-control", placeholder: "Company Name" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :location %>
+    <%= form.text_field :location, class: "form-control", placeholder: "Job Location" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :salary %>
+    <%= form.text_field :salary, class: "form-control", placeholder: "Job Salary" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: "form-control", placeholder: "Job Description" %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :posted, 'Posted:', class: 'form-label' %>
+    <%= time_tag @job.posted_date, format: :short %>
+  </div>
+
+
+  <div class="mb-3">
+    <%= form.label :expiration_date %>
+    <%= form.date_select :expiration_date, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit "Create Job Listing", class: "btn btn-primary" %>
+  </div>
+<% end %>
