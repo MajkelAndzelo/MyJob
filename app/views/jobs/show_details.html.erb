@@ -9,7 +9,7 @@
       <li class="list-group-item"><strong>Expires:</strong> <%= @job.expiration_date %></li>
       <li class="list-group-item"><strong>Salary:</strong> <%= number_to_currency(@job.salary) %></li>
     </ul>
-    <% if Current.user.admin? %>
+    <% if Current.user && Current.user.admin? %>
       <%= link_to "Edit", edit_job_path(@job), class:'btn btn-secondary' %>
       <%= button_to "Delete", job_path(@job), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' %>
     <% end %>

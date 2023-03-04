@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ .dropdown-menu {
+    margin-left: 10px;
+  }
+  

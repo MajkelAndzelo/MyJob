@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_04_000847) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_04_012254) do
   create_table "jobs", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -30,6 +30,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_04_000847) do
     t.datetime "updated_at", null: false
     t.string "uuid"
     t.boolean "admin"
+    t.datetime "last_logged_in_at"
     t.index ["uuid"], name: "index_users_on_uuid"
   end
 

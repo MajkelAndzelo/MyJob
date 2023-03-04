@@ -1,0 +1,46 @@
+<h1>Account Details</h1>
+
+<div class="card">
+  <div class="card-body">
+    <p class="card-text"><%= @user.email %></p>
+    <% if current_user.admin? %>
+      <h5 class="card-title">Admin status:</h5>
+      <% if @user.admin? %>
+        <p class="card-text text-success">Admin</p>
+      <% else %>
+        <p class="card-text text-danger">Not admin</p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <%= form_with model: @user, url: password_path, method: :patch do |form| %>
+      <% if flash[:alert].present? && flash[:alert].include?('Current password is invalid') %>
+        <div class="alert alert-danger">
+          <div><%= flash[:alert] %></div>
+        </div>
+      <% end %>
+      
+      <div class="mb-3">
+        <%= form.label :current_password, 'Current password' %>
+        <%= form.password_field :current_password, class: 'form-control' %>
+      </div>
+      
+      <div class="mb-3">
+        <%= form.label :password, 'New password' %>
+        <%= form.password_field :password, class: 'form-control' %>
+      </div>
+      
+      <div class="mb-3">
+        <%= form.label :password_confirmation, 'Confirm new password' %>
+        <%= form.password_field :password_confirmation, class: 'form-control' %>
+      </div>
+      
+      <div class="mb-3">
+        <%= form.submit 'Change password', class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+</div>

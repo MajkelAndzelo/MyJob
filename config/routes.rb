@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  get 'account_details/show'
   get 'jobs', to: 'jobs#show'
   get 'jobs/new'
   get 'pages/home'
   get 'about', to: 'pages#about'
   root 'pages#home'
+  get 'account_details', to: 'account_details#show'
+
 
  
   get "password", to: "passwords#edit", as: :edit_password
@@ -21,6 +24,10 @@ Rails.application.routes.draw do
     member do
       get 'show_details'
     end
+  end
+  resources :users do
+    get 'account_details', on: :member
+    patch 'change_password', on: :member
   end
   
 
