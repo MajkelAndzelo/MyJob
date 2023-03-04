@@ -5,26 +5,25 @@
         <div class="card mb-3">
   <div class="card-body">
     <h5 class="card-title"><%= job.title %></h5>
-    <h6 class="card-subtitle mb-2 text-muted"><%= number_to_currency(job.salary) %></h6>
+    <h6 class="card-subtitle mb-2" style="color: green;"><%= number_to_currency(job.salary) %></h6>
     <p class="card-text"><%= job.description %></p>
     <p class="card-text"><strong>Company:</strong> <%= job.company %></p>
     <p class="card-text"><strong>Location:</strong> <%= job.location %></p>
     <p class="card-text"><strong>Posted:</strong> <%= job.posted_date %></p>
     <p class="card-text"><strong>Expires:</strong> <%= job.expiration_date %></p>
-    <% if Current.user && Current.user.admin? %>
-      <%= link_to "Edit", edit_job_path(job), class: "btn btn-primary" %>
-      <%= link_to "Delete", job, method: :delete, data: { confirm: "Are you sure you want to delete this job?" }, class: "btn btn-danger" %>
-      <%= link_to "Show", show_details_job_path(job), class:'btn btn-primary' %>
-      <% else %>
-      <%= link_to "Show", show_details_job_path(job), class:'btn btn-primary' %>
-    <% end %>
+    <% if Current.user && (Current.user.admin? || Current.user == job.user) %>
+  <%= link_to "Edit", edit_job_path(job), class: "btn btn-primary" %>
+  <%= link_to "Show", show_details_job_path(job.id), class:'btn btn-primary' %>
+<% else %>
+  <%= link_to "Show", show_details_job_path(job), class:'btn btn-primary' %>
+<% end %>
   </div>
 </div>
       <% end %>
       <%= will_paginate @jobs, renderer: BootstrapLinkRenderer %>
     </div>
     <div class="col-md-4">
-      <% if Current.user.present? && Current.user.admin? %>
+      <% if Current.user.present? %>
         <%= link_to 'Create Job Listing', new_job_path, class: 'btn btn-primary btn-block mb-3' %>
       <% end %>
     </div>

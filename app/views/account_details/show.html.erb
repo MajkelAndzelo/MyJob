@@ -2,7 +2,7 @@
 
 <div class="card">
   <div class="card-body">
-    <p class="card-text"><%= @user.email %></p>
+    <p class="card-text">Email: <%= @user.email %></p>
     <% if current_user.admin? %>
       <h5 class="card-title">Admin status:</h5>
       <% if @user.admin? %>

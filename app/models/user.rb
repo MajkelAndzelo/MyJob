@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: false
   validates :email, presence: true, format: { with: /\A[^@\s]+@[^@\s]+\z/, message: "Must be a valid email address"}
-
+  has_many :jobs
   def name
     nickname.present? ? nickname : email.split('@').first
   end
