@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
   def show
     @jobs = Job.all
-    @jobs = Job.paginate(page: params[:page], per_page: 5)
+    @jobs = Job.paginate(page: params[:page], per_page: 1)
   end
 
   def new
