@@ -1,6 +1,19 @@
 <div class="container">
     <div class='jumbotron' >
         <h1>Welcome to MyJob!</h1>
+        <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Accordion Item #1
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Welcome to MyJob,</strong>  a platform designed to help you find your dream job. Our website is easy to use and offers a wide range of job postings across various industries. Whether you're a recent graduate or an experienced professional, we've got you covered. Our job postings are updated regularly, ensuring that you have access to the latest opportunities. Our user-friendly interface allows you to easily search for jobs, apply to them, and keep track of your applications. We also offer a range of features for employers, making it easy for them to post their job openings and find the right candidates. At MyJob, we're committed to helping you find the right job and take the next step in your career.
+      </div>
+    </div>
+  </div>
         <p>You can read more about us here:</p>
         <%= link_to "About us", about_path, class:'btn btn-dark' %>
     </div>
