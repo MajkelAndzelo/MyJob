@@ -21,6 +21,7 @@
   </div>
 </div>
       <% end %>
+      <%= will_paginate @jobs, renderer: BootstrapLinkRenderer %>
     </div>
     <div class="col-md-4">
       <% if Current.user.present? && Current.user.admin? %>
@@ -29,3 +30,4 @@
     </div>
   </div>
 </div>
+
