@@ -2,7 +2,6 @@ class JobsController < ApplicationController
   include ApplicationHelper
  
   def show
-    raise "test"
     @jobs = Job.all
     @jobs = Job.paginate(page: params[:page], per_page: 1)
   end
