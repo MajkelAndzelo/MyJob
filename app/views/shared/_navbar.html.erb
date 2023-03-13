@@ -26,7 +26,7 @@
           <% end %>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <% if Current.user.present? %>
-              <li><%= link_to "Settings", "#" , class: 'dropdown-item' %></li>
+              <li><%= link_to "About us", about_path , class: 'dropdown-item' %></li>
               <li><%= link_to "Account details", account_details_path, class: 'dropdown-item' %></li>
               <li><hr class="dropdown-divider"></li>
               <%= button_to "Log out", logout_path, method: :delete, class: 'dropdown-item' %>
