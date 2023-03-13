@@ -1,24 +1,9 @@
-# README
+# MyJob
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+MyJob is a Ruby on Rails web application that allows users to create and search for job listings. Features include:
+- User authentication and authorization
+- Ability to create, edit, and delete job listings
+- Pagination of job listings
+- Job listings display details such as salary, company, and description
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To use this application, clone the repository and run it on your local machine.
